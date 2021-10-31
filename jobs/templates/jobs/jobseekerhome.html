@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'jobs/base.html'%}
+{%block body_block%}
+<style>
+    body{
+        background-color: darkgray;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h6>welcome {{request.user}} {{request.user.role}}</h6>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <a href="{%url 'addjobseekerprofile'%}" class="btn btn-info">ADD PROFILE</a>
+            <a href="{%url 'viewjobseekerprofile'%}" class="btn btn-info">VIEW PROFILE</a>
+
+        </div>
+        <div class="col-4">
+
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{%endblock%}

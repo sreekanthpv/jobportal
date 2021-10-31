@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'jobs/base.html'%}
+{%block body_block%}
+<style>
+    body{
+        background-color:#39a3ad;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-6">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  {%for pro in profile%}
+                      <li class="list-group-item fw-bold">userid : {{pro.user}}</li>
+                    <li class="list-group-item fw-bold">name : {{pro.name}}</li>
+                    <li class="list-group-item fw-bold">qualification : {{pro.qualification}}</li>
+                    <li class="list-group-item fw-bold">experience : {{pro.experience}}</li>
+                    <li class="list-group-item fw-bold">resume : {{pro.resume}}</li>
+                    {%endfor%}
+                    <a href="" class="btn btn-success m-2 fw-bold">update profile</a>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-2"></div>
+    </div>
+</div>
+{%endblock%}

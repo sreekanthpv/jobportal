@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%extends 'jobs/base.html'%}
+{%block body_block%}
+<style>
+  body{
+    background-color:dimgray;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+      <div class="col-4"></div>
+    <div class="col-4">
+      <form action="" method="post" enctype="multipart/form-data">
+          {%csrf_token%}
+          {{form.as_p}}
+          <button type="submit" class="btn btn-success">update</button>
+      </form>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+{%endblock%}
