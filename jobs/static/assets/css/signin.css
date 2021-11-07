@@ -1,16 +1,26 @@
 .body{ 
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
-   
+background-image:url("../img/signin2.jpg");
+background-size: 1400px;
+/* width: 1000px; */
+
+
 }
 
+
+
 .but{ 
-    width: 346px;
+    width: 410px;
     height: 38px;
         border-radius: 5px;
-background-color:#20c997 ;
+background-color:#786952 ;
 }
 
 .but:hover{
     color: burlywood;
     background-color:#198754 !important;
+}
+
+.cont{
+    position: relative;
+    /* top: 0px; */
 }

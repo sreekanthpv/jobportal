@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'jobs/base.html'%}
+{%block body_block%}
+<style>
+    body{
+        background-color:#39a3ad;
+    }
+
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-6">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    {%for pro in company%}
+                    <li class="list-group-item fw-bold">company id : {{pro.id}}</li>
+
+                    <li class="list-group-item fw-bold">userid : {{pro.user_id}}</li>
+                    <li class="list-group-item fw-bold">company name : {{pro.company_name}}</li>
+                    <li class="list-group-item fw-bold">description : {{pro.description}}</li>
+                    <li><img src="{{pro.logo.url}}" alt="" width="200px" height="200px"></li>
+                    <a href="{%url 'editcompany' pro.id %}" class="btn btn-success m-2 fw-bold">update</a>
+
+                    {%endfor%}
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-2"></div>
+    </div>
+</div>
+{%endblock%}

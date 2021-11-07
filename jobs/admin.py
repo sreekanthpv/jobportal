@@ -7,7 +7,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 
-from jobs.models import MyUser
+from jobs.models import MyUser,CompanyProfile,Application,Jobs,JobSeekerProfile
 
 
 
@@ -84,3 +84,8 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(MyUser, UserAdmin)
 
 admin.site.unregister(Group)
+
+admin.site.register(CompanyProfile)
+admin.site.register(Jobs)
+admin.site.register(JobSeekerProfile)
+admin.site.register(Application)

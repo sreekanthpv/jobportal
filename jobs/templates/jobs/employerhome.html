@@ -12,25 +12,24 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4"><h3>welcome {{request.user}} {{request.user.role}}</h3></div>
-        <div class="col-4"></div>
+        <div class="col-4">
+
+
+        </div>
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="row">
-        <div class="col-3">
 
-        </div>
-        <div class="col-8 p-5">
-                <div class="mt-5">
-                    <a href="{%url 'addcompany'%}" class="btn btn-info me-5 fw-bold" style="height:70px;width:180px;color:#363844;"> ADD COMPANY</a>
-                    <a href="{%url 'addjob'%}" class="btn btn-info pe-5 me-5 fw-bold" style="height:70px;width:180px;color: #363844;">POST A JOB</a>
-                    <a href="{%url 'listjob'%}" class="btn btn-info  fw-bold" style="height:70px;width:180px;color: #363844;">VIEW ADDED JOBS</a>
-        
-                </div>
-         
-        </div>
-        <div class="col-2"></div>
+    
+
+        <a href="{%url 'addcompany'%}" class="btn-gra" style="width: 240px;"> ADD COMPANY</a> <br>
+        <a href="{%url 'viewcompanyprofile'%}" class="btn-gra" style="width: 240px;"> VIEW COMPANY PROFILE</a> <br>
+            <a href="{%url 'elistapplication'%}" class="btn-gra" style="width: 240px;">VIEW APPLICATIONS</a> <br>
+
+                    <a href="{%url 'addjob'%}" class="btn-gra" style="width: 240px;">POST A JOB</a>
+                    <a href="{%url 'listjob'%}" class="btn-gra" style="width: 240px;">VIEW ADDED JOBS</a> <br>
     </div>
 </div>
 {%endblock%}

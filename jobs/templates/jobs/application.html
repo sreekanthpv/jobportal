@@ -14,10 +14,16 @@
       <form action="" method="post" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
-          <button type="submit" class="btn btn-success">confirm</button>
+          <button type="submit" class="btn btn-success">Apply</button>
       </form>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4">
+        {%if messages%}
+        {%for message in messages%}
+        {{message}}
+        {%endfor%}
+        {%endif%}
+    </div>
   </div>
 </div>
 

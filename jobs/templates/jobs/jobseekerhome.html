@@ -6,29 +6,61 @@
         background-color: darkgray;
     }
 
+
+
+
+
+
 </style>
 
 <div class="container">
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <h6>welcome {{request.user}} {{request.user.role}}</h6>
+        <div class="col-3"><h6>user: {{request.user}} <br> Role: {{request.user.role}}</h6></div>
+        <div class="col-5">
+            <h1 class="ms-5 text-center fw-bold m-2">HOME PAGE</h1>
         </div>
         <div class="col-4"></div>
     </div>
 </div>
-<div class="container">
+
+
+<div class="container-fluid mt-3">
     <div class="row">
-        <div class="col-4">
-            <a href="{%url 'addjobseekerprofile'%}" class="btn btn-info">ADD PROFILE</a>
-            <a href="{%url 'viewjobseekerprofile'%}" class="btn btn-info">VIEW PROFILE</a>
+        <div class="col-3">
+
+
+            <a href="{%url 'addjobseekerprofile'%}" class="button-grad ">ADD PROFILE</a>
+
+            <a href="{%url 'viewjobseekerprofile'%}" class="button-grad ">VIEW PROFILE</a>
+            <a href="{%url 'listapplication'%}" class="button-grad ">VIEW APPLIED JOBS</a>
+
 
         </div>
-        <div class="col-4">
 
 
+        <div class="col-9">
+            {%for job in jobs%}
+
+
+            <div class="card ms-5 mt-2 c" style="width:800px; border-color:grey;">
+                <div class="card-body">
+                    <a href="{%url 'application' job.id %}"><h5 class="card-title hf">{{job.post_name}}</h5></a>
+
+                    <h6 class="card-text">Experience required : {{job.experience}}</h6>
+                    <h6 class="card-text">{{job.description}}</h6>
+
+                </div>
+            </div>
+            {%endfor%}
         </div>
-        <div class="col-4"></div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row ps-5">
+
+
     </div>
 </div>
 

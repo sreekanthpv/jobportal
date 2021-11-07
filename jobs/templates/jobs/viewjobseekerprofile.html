@@ -3,23 +3,27 @@
 {%block body_block%}
 <style>
     body{
-        background-color:#39a3ad;
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        height: 990px;
     }
+
+
 </style>
 <div class="container">
     <div class="row">
         <div class="col-4"></div>
         <div class="col-6">
-            <div class="card" style="width: 18rem;">
-                <ul class="list-group list-group-flush">
-                  {%for pro in profile%}
-                      <li class="list-group-item fw-bold">userid : {{pro.user}}</li>
-                    <li class="list-group-item fw-bold">name : {{pro.name}}</li>
-                    <li class="list-group-item fw-bold">qualification : {{pro.qualification}}</li>
-                    <li class="list-group-item fw-bold">experience : {{pro.experience}}</li>
-                    <li class="list-group-item fw-bold">resume : {{pro.resume}}</li>
+            <div class="card" style="width: 18rem; background-color: darkgray;">
+                <ul class="list-group list-group-flush" style="background-color: darkgray;">
+                    {%for pro in profile%}
+                    <li class="list-group-item fw-bold" style="background-color: darkgray;">userid : {{pro.user}}</li>
+                    <li class="list-group-item fw-bold" style="background-color: darkgray;">name : {{pro.name}}</li>
+                    <li class="list-group-item fw-bold" style="background-color: darkgray;">qualification :{{pro.qualification}}</li>
+                    <li class="list-group-item fw-bold" style="background-color: darkgray;">experience : {{pro.experience}}</li>
+                    <li class="list-group-item fw-bold" style="background-color: darkgray;">resume : {{pro.resume}}</li>
+                    <a href="{%url 'editjobseekerprofile' pro.id%}" class="btn-grad m-2 fw-bold">update profile</a>
+
                     {%endfor%}
-                    <a href="" class="btn btn-success m-2 fw-bold">update profile</a>
 
 
                 </ul>

@@ -105,7 +105,9 @@ class JobSeekerProfile(models.Model):
 
 class Application(models.Model):
     job=models.ForeignKey(Jobs,on_delete=models.CASCADE)
+    post_name=models.CharField(max_length=30,null=True)
     user=models.ForeignKey(MyUser,on_delete=models.CASCADE)
+    email=models.CharField(max_length=30,null=True)
     options=(
         ('applied','applied'),
         ('intouch','intouch'),

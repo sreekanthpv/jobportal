@@ -1,17 +1,124 @@
 /* employer hoem page */
-.button{
-  width: 200px;;
 
-}
+
+
+.btn-gra {background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%)}
+.btn-gra {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-gra:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
 /* employer home page */
 
+/* jobseekerhome */
 
+
+/* jobseekerhome */
 
 
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
+
+
+
+
+
+/* jobseekerhome */
+.hf{
+  font-weight: bold;
+  color: #444444;
+  
+}
+
+.hf:hover{
+  color:white;
+  text-decoration:underline;
+}
+
+.c{
+  border-radius: 10px;
+  border-color: darkslategrey;
+}
+.c:hover{
+  
+  background-color: cadetblue;
+  border-width: 3px;
+  border-color: black;
+}
+
+.button-grad {background-image: linear-gradient(to right, #200122 0%, #6f0000  51%, #200122  100%)}
+         .button-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .button-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+
+
+
+/* jobseekerhome */
+
+
+/* viewjobseekerprofile */
+
+  
+  .btn-grad {background-image: linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%)}
+  .btn-grad {
+     margin: 10px;
+     padding: 15px 45px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 20px #eee;
+     border-radius: 10px;
+     display: block;
+   }
+
+   .btn-grad:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+   }
+  
+
+
+/* view jobseeker profile */
+
+
+
+
 
 #m{
 position:relative;

@@ -1,12 +1,21 @@
 from django import forms
-from jobs.models import MyUser,CompanyProfile,Jobs,JobSeekerProfile
+from jobs.models import MyUser,CompanyProfile,Jobs,JobSeekerProfile,Application
 from django.contrib.auth.forms import UserCreationForm
 
 
 class RegistrationForm(UserCreationForm):
+    # password1 = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control"})),
+    # password2 = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control"})),
     class Meta:
         model=MyUser
-        fields=["email","role"]
+        fields=["email","role","password1","password2"]
+        widgets={
+            "email":forms.TextInput(attrs={"class":"form-control"}),
+            "role": forms.Select(attrs={"class": "form-select"}),
+
+
+        }
+
 
 class SignInForm(forms.Form):
     email=forms.CharField(widget=forms.EmailInput(attrs={"class":"form-control"}))
@@ -47,4 +56,43 @@ class AddJobSeekerProfileForm(forms.ModelForm):
     class Meta:
         model=JobSeekerProfile
         fields=["name","qualification","experience","resume"]
+
+
+
+class EditCompanyForm(forms.ModelForm):
+
+
+
+
+    class Meta:
+        model=CompanyProfile
+        fields=["company_name","description","logo"]
+        widgets={
+            "company_name":forms.TextInput(attrs={"class":"form-control"}),
+            "description": forms.Textarea(attrs={"class": "form-control"})
+
+        }
+
+
+
+class ApplicationForm(forms.ModelForm):
+
+    class Meta:
+        model=Application
+        fields=["job","status","post_name"]
+        widgets={
+            "job":forms.TextInput(attrs={"class":"form-control","readonly":True}),
+            "status":forms.TextInput(attrs={"class":"form-control","readonly":True}),
+            "post_name":forms.TextInput(attrs={"class":"form-control","readonly":True}),
+
+
+        }
+class EditApplicationForm(forms.ModelForm):
+
+        class Meta:
+            model = Application
+            fields = ["status"]
+            widgets = {
+                "status": forms.Select(attrs={"class": "form-control"})
+            }
 
