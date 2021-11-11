@@ -15,6 +15,7 @@ urlpatterns = [
     path('employer/jobs/add',views.AddJobView.as_view(),name="addjob"),
     path('employer/jobs/view',views.ListJobView.as_view(),name='listjob'),
     path('employer/jobs/update/<int:id>',views.EditJobView.as_view(),name="editjob"),
+    path('employer/jobs/remove/<int:id>',views.DeleteJobs.as_view(),name="deletejob"),
     path('employer/application/view',views.EmployerListApplication.as_view(),name="elistapplication"),
     path('employer/application/update/<int:id>',views.EmployerEditApplicationView.as_view(),name="employereditapp"),
     path('employer/application/delete/<int:id>',views.EmployerDeleteApplication.as_view(),name="deleteapp"),
@@ -24,6 +25,7 @@ urlpatterns = [
     path('jobseeker/profile/update/<int:id>',views.EditJobSeekerProfileView.as_view(),name="editjobseekerprofile"),
     path('jobseeker/jobs/apply/<int:id>',views.JobseekerApplicationView.as_view(),name="application"),
     path('jobseeker/jobs/application/view',views.ListApplicationView.as_view(),name="listapplication"),
+    path('jobseeker/jobs/search',views.JobSearch.as_view(),name="jobsearch"),
 
 
 ]

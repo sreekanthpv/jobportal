@@ -57,7 +57,7 @@ body {
   border-color: darkslategrey;
 }
 .c:hover{
-  
+  color:white;
   background-color: cadetblue;
   border-width: 3px;
   border-color: black;

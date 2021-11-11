@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'jobs/base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+          <form action="" method="get">
+                {{filter.form}}
+                <button type="submit" class="btn btn-info">search</button>
+            </form>
+
+
+        <div class="col-10">
+
+             {%for job in filter.qs%}
+
+
+            <div class="card ms-5 mt-2 c" style="width:800px; border-color:grey;">
+                <div class="card-body">
+                    <a href="{%url 'application' job.id %}"><h5 class="card-title hf">{{job.post_name}}</h5></a>
+
+                    <h6 class="card-text">Experience required : {{job.experience}}</h6>
+                    <h6 class="card-text">{{job.description}}</h6>
+
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+{%endblock%}

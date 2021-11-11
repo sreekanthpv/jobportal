@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'jobs',
+    'django_filters'
 ]
 
 AUTH_USER_MODEL = 'jobs.MyUser'

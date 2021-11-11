@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.utils.decorators import method_decorator
 from jobs.decorators import signin_required,employer_signin,jobseeker_signin
+from jobs.filters import JobFilter
+from django_filters.views import FilterView
 # users
 # hari@gmail.com django@123 employer
 # sreekanth@
@@ -189,6 +191,12 @@ class EditJobView(UpdateView):
     pk_url_kwarg = "id"
     success_url = reverse_lazy("listjob")
 
+class DeleteJobs(DeleteView):
+    model = Jobs
+    template_name = "jobs/employerdeleteapplication.html"
+    pk_url_kwarg = "id"
+    success_url = reverse_lazy("listjob")
+
 
 
 
@@ -279,6 +287,20 @@ class ListApplicationView(ListView):
         return queryset
 
 
+class JobSearch(FilterView):
+    model=Jobs
+    filterset_class = JobFilter
+    template_name = "jobs/jobsearch.html"
+    # context_object_name = "fil"
+
+    def get_queryset(self):
+        queryset=Jobs.objects.all()
+        return queryset
+
+
+
+
+
 @method_decorator(signin_required,name="dispatch")
 @method_decorator(employer_signin,name='dispatch')
 class EmployerListApplication(ListView):
@@ -311,3 +333,4 @@ class EmployerDeleteApplication(DeleteView):
         template_name = "jobs/employerdeleteapplication.html"
         pk_url_kwarg = "id"
         success_url = reverse_lazy("elistapplication")
+
