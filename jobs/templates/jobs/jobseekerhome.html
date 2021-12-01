@@ -11,6 +11,7 @@
 
 
 
+
 </style>
 
 <div class="container">
@@ -35,20 +36,21 @@
             <a href="{%url 'jobsearch'%}" class="button-grad ">SEARCH JOB</a>
 
 
-
         </div>
 
 
         <div class="col-9">
             {%for job in jobs%}
 
-
-            <div class="card ms-5 mt-2 c" style="width:800px; border-color:grey;">
+            <div class="card ms-5 mt-2 c" style="width:500px; border-color:grey;">
                 <div class="card-body">
-                    <a href="{%url 'application' job.id %}"><h5 class="card-title hf">{{job.post_name}}</h5></a>
+                    <a href="{%url 'application' job.id %}"><h4 class="card-title hf">{{job.post_name}}</h4></a>
 
-                    <h6 class="card-text">Experience required : {{job.experience}}</h6>
-                    <h6 class="card-text">{{job.description}}</h6>
+                    <h5 class="card-text">Experience required : {{job.experience}}</h5>
+                    <h6 class="card-text"><p>job desciption : <span>{{job.description}}</span></p></h6>
+                    <h6 class="card-text">posted on : <span class="text-info">{{job.created_date}}</span></h6>
+                    <h6 class="card-text">closing on : <span class="text-info">{{job.end_date}}</span></h6>
+
 
                 </div>
             </div>

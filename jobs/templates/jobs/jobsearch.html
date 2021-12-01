@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 {%extends 'jobs/base.html'%}
 {%block body_block%}
-<div class="container">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4 text-end">
+                      <a href="{%url 'jobseekerhome'%}" class="btn btn-dark" style="width:200px;">Home</a>
+
+        </div>
+    </div>
     <div class="row">
           <form action="" method="get">
                 {{filter.form}}
@@ -26,5 +34,6 @@
             {%endfor%}
         </div>
     </div>
+
 </div>
 {%endblock%}

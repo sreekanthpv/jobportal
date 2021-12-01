@@ -8,26 +8,34 @@
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <table class="table">
+        <div class="col-2">
+                        <a href="{%url 'employerhome'%}" class="btn btn-dark" style="width:200px;"> Home</a>
+
+        </div>
+        <div class="col-10">
+            <table class="table m-3">
                 <tr>
-                    <td>id</td>
+<!--                    <td>id</td>-->
                     <td>post name</td>
                     <td>experience</td>
                     <td>description</td>
-                    <td>company id</td>
-                    <td>action</td>
+<!--                    <td>company id</td>-->
+
+                    <td>updated on</td>
+                    <td>ends on</td>
+                      <td>action</td>
 
                 </tr>
 
             {%for job in jobs%}
                 <tr>
-                    <td>{{job.id}}</td>
+<!--                    <td>{{job.id}}</td>-->
                     <td>{{job.post_name}}</td>
                     <td>{{job.experience}}</td>
                     <td>{{job.description}}</td>
-                    <td>{{job.company_id}}</td>
+                    <td>{{job.created_date}}</td>
+                    <td>{{job.end_date}}</td>
+<!--                    <td>{{job.company_id}}</td>-->
                         <td><a href="{%url 'editjob' job.id %}" class="btn btn-info">UPDATE</a></td>
                     <td><a href="{%url 'deletejob' job.id %}" class="btn btn-danger">REMOVE</a></td>
 
@@ -38,7 +46,7 @@
             {%endfor%}
             </table>
         </div>
-        <div class="col-2"></div>
+<!--        <div class="col-2"></div>-->
     </div>
 </div>
 

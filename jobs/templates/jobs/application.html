@@ -14,7 +14,7 @@
       <form action="" method="post" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
-          <button type="submit" class="btn btn-success">Apply</button>
+          <button type="submit" class="btn btn-success">Apply</button> <span><a href="{%url 'viewcompanyprofile'%}">company profile</a></span>
       </form>
     </div>
     <div class="col-4">

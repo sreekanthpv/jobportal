@@ -35,6 +35,11 @@ class AddCompanyForm(forms.ModelForm):
     class Meta:
         model=CompanyProfile
         fields=["company_name","description","logo"]
+        widgets = {
+            "company_name": forms.TextInput(attrs={"class": "form-control"}),
+            "description": forms.Textarea(attrs={"class": "form-control"})
+
+        }
 
 
     def clean(self):
@@ -48,21 +53,33 @@ class AddCompanyForm(forms.ModelForm):
 class AddJobForm(forms.ModelForm):
     class Meta:
         model=Jobs
-        fields=["post_name","experience","description"]
+        fields=["post_name","experience","description","end_date"]
+        widgets={
+            "post_name":forms.TextInput(attrs={"class":"form-control"}),
+            "experience": forms.TextInput(attrs={"class": "form-control"}),
+            "description": forms.Textarea(attrs={"class": "form-control"}),
+            "end_date":forms.DateInput(attrs={"type":"date"})
+
+        }
 
 
 
 class AddJobSeekerProfileForm(forms.ModelForm):
     class Meta:
         model=JobSeekerProfile
-        fields=["name","qualification","experience","resume"]
+        fields=["name","qualification","experience","resume","photo"]
+        widgets={
+            "name":forms.TextInput(attrs={"class":"form-control"}),
+            "qualification": forms.TextInput(attrs={"class": "form-control"}),
+            "experience": forms.TextInput(attrs={"class": "form-control"}),
+            "resume": forms.FileInput(),
+
+
+        }
 
 
 
 class EditCompanyForm(forms.ModelForm):
-
-
-
 
     class Meta:
         model=CompanyProfile
@@ -79,12 +96,12 @@ class ApplicationForm(forms.ModelForm):
 
     class Meta:
         model=Application
-        fields=["job","status","post_name"]
+        fields=["job","status","post_name","company"]
         widgets={
             "job":forms.TextInput(attrs={"class":"form-control","readonly":True}),
             "status":forms.TextInput(attrs={"class":"form-control","readonly":True}),
             "post_name":forms.TextInput(attrs={"class":"form-control","readonly":True}),
-
+            "company": forms.TextInput(attrs={"class": "form-control", "readonly": True}),
 
         }
 class EditApplicationForm(forms.ModelForm):

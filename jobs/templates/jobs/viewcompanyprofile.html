@@ -10,17 +10,19 @@
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-4"></div>
+        <div class="col-4">
+            <a href="{%url 'employerhome'%}" class="btn btn-dark" style="width:200px;"> Home</a>
+        </div>
         <div class="col-6">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 30rem;">
                 <ul class="list-group list-group-flush">
                     {%for pro in company%}
-                    <li class="list-group-item fw-bold">company id : {{pro.id}}</li>
+<!--                    <li class="list-group-item fw-bold">company id : {{pro.id}}</li>-->
 
-                    <li class="list-group-item fw-bold">userid : {{pro.user_id}}</li>
+<!--                    <li class="list-group-item fw-bold">userid : {{pro.user_id}}</li>-->
                     <li class="list-group-item fw-bold">company name : {{pro.company_name}}</li>
                     <li class="list-group-item fw-bold">description : {{pro.description}}</li>
-                    <li><img src="{{pro.logo.url}}" alt="" width="200px" height="200px"></li>
+                    <li><img src="{{pro.logo.url}}" alt="" width="250px" height="200px"></li>
                     <a href="{%url 'editcompany' pro.id %}" class="btn btn-success m-2 fw-bold">update</a>
 
                     {%endfor%}

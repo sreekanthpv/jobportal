@@ -67,7 +67,7 @@ class SignOutView(TemplateView):
         logout(request)
         return redirect("signin")
 
-
+#
 @method_decorator(signin_required,name="dispatch")
 @method_decorator(employer_signin,name='dispatch')
 class EmployerHome(TemplateView):
@@ -86,7 +86,7 @@ class JobSeekerHomeView(ListView):
         return queryset
 
 
-
+#
 @method_decorator(signin_required,name="dispatch")
 @method_decorator(employer_signin,name='dispatch')
 class AddCompanyView(CreateView):
@@ -111,7 +111,7 @@ class AddCompanyView(CreateView):
             return render(request,self.template_name,{"form":form})
 
 
-
+#
 @method_decorator(signin_required,name="dispatch")
 @method_decorator(employer_signin,name='dispatch')
 class ViewCompanyProfileView(ListView):
@@ -148,7 +148,7 @@ class EditCompanyProfileView(UpdateView):
     #         return render(request, self.template_name, {"form": form})
 
 
-
+#
 @method_decorator(signin_required,name="dispatch")
 @method_decorator(employer_signin,name='dispatch')
 class AddJobView(CreateView):
@@ -165,7 +165,7 @@ class AddJobView(CreateView):
             job.company=comp
             job.save()
             messages.success(request,"job posted successfully")
-            return redirect("addjob")
+            return redirect("listjob")
         else:
             return render(request,self.template_name,{"form":form})
 
@@ -214,7 +214,7 @@ class AddJobSeekerProfileView(CreateView):
             profile=form.save(commit=False)
             profile.user=request.user
             profile.save()
-            return redirect("addjobseekerprofile")
+            return redirect("viewjobseekerprofile")
 
         else:
             return render(request,self.template_name,{"form":form})
@@ -257,8 +257,9 @@ class JobseekerApplicationView(CreateView):
     def get(self, request, *args, **kwargs):
         job=self.model.objects.get(id=kwargs["id"])
         post=job.post_name
+        company=CompanyProfile.objects.get(id=job.company_id)
         # print("post======",post)
-        form=self.form_class(initial={"job":job,"post_name":post})
+        form=self.form_class(initial={"job":job,"post_name":post,"company":company})
         return render(request, self.template_name, {"form": form})
 
     def post(self, request, *args, **kwargs):
@@ -313,8 +314,8 @@ class EmployerListApplication(ListView):
         # print("user=============",user.id)
         company=CompanyProfile.objects.get(user_id=user.id)
         # print("company===",company.id)
-        job=Jobs.objects.get(company_id=company)
-        queryset=self.model.objects.filter(job_id=job.id)
+        # job=Jobs.objects.get(company_id=company)
+        queryset=self.model.objects.filter(company_id=company.id)
         return queryset
 
 
@@ -326,6 +327,7 @@ class EmployerEditApplicationView(UpdateView):
     template_name = "jobs/application.html"
     pk_url_kwarg = "id"
     success_url = reverse_lazy("elistapplication")
+
 
 class EmployerDeleteApplication(DeleteView):
 

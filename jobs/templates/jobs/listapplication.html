@@ -8,18 +8,21 @@
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-2"></div>
+        <div class="col-2">
+                      <a href="{%url 'jobseekerhome'%}" class="btn btn-dark" style="width:200px;">Home</a>
+
+        </div>
         <div class="col-8">
-            <table class="table">
+            <table class="table m-5">
                 <tr class="">
                     <td>post</td>
-                    <td>job_id</td>
+<!--                    <td>job_id</td>-->
                     <td>status</td>
                 </tr>
                 {%for app in application%}
                 <tr>
                     <td>{{app.post_name}}</td>
-                    <td>{{app.job_id}}</td>
+<!--                    <td>{{app.job_id}}</td>-->
                     <td>{{app.status}}</td>
                 </tr>
                 {%endfor%}

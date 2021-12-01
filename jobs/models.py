@@ -94,7 +94,9 @@ class Jobs(models.Model):
     company=models.ForeignKey(CompanyProfile,on_delete=models.CASCADE)
     post_name=models.CharField(max_length=50)
     experience=models.CharField(max_length=50)
-    description=models.CharField(max_length=100)
+    description=models.CharField(max_length=500)
+    created_date=models.DateField(auto_now_add=True)
+    end_date=models.DateField()
 
 class JobSeekerProfile(models.Model):
     user=models.OneToOneField(MyUser,on_delete=models.CASCADE)
@@ -102,9 +104,11 @@ class JobSeekerProfile(models.Model):
     qualification=models.CharField(max_length=100)
     experience=models.CharField(max_length=150)
     resume=models.FileField(upload_to="file")
+    photo=models.ImageField(upload_to='image')
 
 class Application(models.Model):
     job=models.ForeignKey(Jobs,on_delete=models.CASCADE)
+    company=models.ForeignKey(CompanyProfile,on_delete=models.CASCADE)
     post_name=models.CharField(max_length=30,null=True)
     user=models.ForeignKey(MyUser,on_delete=models.CASCADE)
     email=models.CharField(max_length=30,null=True)

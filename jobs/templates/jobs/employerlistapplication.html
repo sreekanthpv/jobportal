@@ -7,15 +7,23 @@
   }
 </style>
 <div class="container-fluid">
+    <div class="row mb-5">
+        <div class="col-4">
+                        <a href="{%url 'employerhome'%}" class="btn btn-dark" style="width:200px;"> Home</a>
+
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+    </div>
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
             <table class="table">
                 <tr class="">
-                  <td>application id</td>
-                    <td>user_id</td>
+<!--                  <td>application id</td>-->
+<!--                    <td>user_id</td>-->
                     <td>email</td>
-                    <td>job_id</td>
+<!--                    <td>job_id</td>-->
                     <td>post</td>
                     <td>status</td>
                     <td>action</td>
@@ -23,10 +31,10 @@
                 </tr>
                 {%for app in application%}
                 <tr>
-                  <td>{{app.id}}</td>
-                    <td>{{app.user_id}}</td>
+<!--                  <td>{{app.id}}</td>-->
+<!--                    <td>{{app.user_id}}</td>-->
                     <td>{{app.email}}</td>
-                    <td>{{app.job_id}}</td>
+<!--                    <td>{{app.job_id}}</td>-->
                     <td>{{app.post_name}}</td>
                     <td>{{app.status}}</td>
                     <td><a href="{%url 'employereditapp' app.id %}" class="btn btn-info">send response</a></td>

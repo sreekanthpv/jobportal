@@ -10,17 +10,23 @@
 
 </style>
 <div class="container">
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-6">
-            <div class="card" style="width: 18rem; background-color: darkgray;">
+    <div class="row text-center">
+        <div class="col-2">
+                      <a href="{%url 'jobseekerhome'%}" class="btn btn-dark" style="width:200px;">Home</a>
+
+        </div>
+        <div class="col-8 text-center">
+            <div class="card m-5" style="width: rem; background-color: darkgray;">
                 <ul class="list-group list-group-flush" style="background-color: darkgray;">
                     {%for pro in profile%}
-                    <li class="list-group-item fw-bold" style="background-color: darkgray;">userid : {{pro.user}}</li>
+                    <li class="text-center">    <img src="{{pro.photo.url}}" alt="" style="height:300px;width:300px;" class="rounded-circle"></li>
+
+<!--                    <li class="list-group-item fw-bold" style="background-color: darkgray;">userid : {{pro.user}}</li>-->
                     <li class="list-group-item fw-bold" style="background-color: darkgray;">name : {{pro.name}}</li>
                     <li class="list-group-item fw-bold" style="background-color: darkgray;">qualification :{{pro.qualification}}</li>
                     <li class="list-group-item fw-bold" style="background-color: darkgray;">experience : {{pro.experience}}</li>
                     <li class="list-group-item fw-bold" style="background-color: darkgray;">resume : {{pro.resume}}</li>
+
                     <a href="{%url 'editjobseekerprofile' pro.id%}" class="btn-grad m-2 fw-bold">update profile</a>
 
                     {%endfor%}
@@ -30,7 +36,8 @@
             </div>
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-2">
+        </div>
     </div>
 </div>
 {%endblock%}
